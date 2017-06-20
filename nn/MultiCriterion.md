@@ -47,11 +47,13 @@ mse = MSECriterion()
 module.add(nll, 0.5)
 module.add(mse)
 
-val input = Tensor(5).randn()
-val target = Tensor(5)
-target(Array(1)) = 1
-target(Array(2)) = 2
-target(Array(3)) = 3
-target(Array(4)) = 2
-target(Array(5)) = 1
+input = np.array([0.9682213801388531,
+0.35258855644097503,
+0.04584479998452568,
+-0.21781499692588918,
+-1.02721844006879])
+target = np.array([1, 2, 3, 2, 1])
+
+> module.forward(input, target)
+3.6099546
 ```
