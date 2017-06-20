@@ -9,11 +9,34 @@ Scala code, how to new an instance
 Python cod, how to new an instance
 ```
 
-Description
+MultiCriterion is a weighted sum of other criterions each applied to the same input and target
 
 **Scala example:**
 ```scala
-Scala code
+val module = new MultiCriterion()
+val nll = new ClassNLLCriterion()
+val mse = new MSECriterion()
+module.add(nll, 0.5)
+module.add(mse)
+
+val input = Tensor(5).randn()
+val target = Tensor(5)
+target(Array(1)) = 1
+target(Array(2)) = 2
+target(Array(3)) = 3
+target(Array(4)) = 2
+target(Array(5)) = 1
+
+> println(input)
+0.9682213801388531
+0.35258855644097503
+0.04584479998452568
+-0.21781499692588918
+-1.02721844006879
+[com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 5]
+
+> module.forward(input, target)
+res0: Double = 3.609954360965033
 ```
 
 **Python example:**
