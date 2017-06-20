@@ -14,9 +14,9 @@ CosineDistance creates a module that takes a table of two vectors (or matrices i
 **Scala example:**
 ```scala
 val module = CosineDistance()
-val input1 = Tensor(3).randn()
-val input2 = Tensor(3).randn()
-val input = T(input1, input2)
+val t1 = Tensor(3).randn()
+val t2 = Tensor(3).randn()
+val input = T(t1, t2)
 
 > println(input)
 {
@@ -37,5 +37,14 @@ val input = T(input1, input2)
 
 **Python example:**
 ```python
-Python Code
+module = CosineDistance()
+t1 = np.random.randn(3)
+t2 = np.random.randn(3)
+input = [t1, t2]
+
+> print input
+[array([-1.77578888,  1.22056291,  0.19355876]), array([-1.9792508 , -1.46121938,  0.40647557])]
+
+> module.forward(input)
+[array([ 0.33549139], dtype=float32)]
 ```
