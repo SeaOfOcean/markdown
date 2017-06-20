@@ -2,14 +2,22 @@
 
 **Scala:**
 ```scala
-Scala code, how to new an instance
+val module = PReLU(nOutputPlane)
 ```
 **Python:**
 ```python
-Python cod, how to new an instance
+module = PReLU(nOutputPlane)
 ```
 
-Description
+Applies parametric ReLU, which parameter varies the slope of the negative part.
+
+```
+PReLU: f(x) = max(0, x) + a * min(0, x)
+```
+nOutputPlane's default value is 0, that means using PReLU in shared version and has
+only one parameters. nOutputPlane is the input map number(Default is 0).
+
+Notice: Please don't use weight decay on this.
 
 **Scala example:**
 ```scala
