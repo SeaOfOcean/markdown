@@ -51,6 +51,7 @@ val input = Tensor(2, 2, 3).randn()
 ```python
 module = PReLU(2)
 input = np.random.randn(2, 2, 3)
+
 > print input
 [[[ 2.50596953 -0.06593339 -1.90273409]
   [ 0.2464341   0.45941315 -0.41977094]]
