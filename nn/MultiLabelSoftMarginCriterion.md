@@ -33,5 +33,10 @@ res0: Double = 0.608193395686766
 
 **Python example:**
 ```python
-Python Code
+criterion = MultiLabelSoftMarginCriterion()
+input = np.array([0.4, 0.5, 0.6])
+target = np.array([0, 1, 1])
+
+> criterion.forward(input, target)
+0.6081934
 ```
