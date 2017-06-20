@@ -45,5 +45,20 @@ for (i <- 1 to 5) {
 
 **Python example:**
 ```python
-Python Code
+hiddenSize = 4
+inputSize = 5
+module = Recurrent().add(RnnCell(inputSize, hiddenSize, Tanh()))
+input = np.zeros((1, 5, 5))
+input[0][0][4] = 1
+input[0][1][0] = 1
+input[0][2][4] = 1
+input[0][3][3] = 1
+input[0][4][0] = 1
+
+> module.forward(input)
+[array([[[ 0.7526533 ,  0.29162994, -0.28749418, -0.11243925],
+         [ 0.33291328, -0.07243762, -0.38017112,  0.53216213],
+         [ 0.83854133,  0.07213539, -0.34503224,  0.33690596],
+         [ 0.44095358,  0.27467242, -0.05471399,  0.46601957],
+         [ 0.451913  , -0.33519334, -0.61357468,  0.56650752]]], dtype=float32)]
 ```
