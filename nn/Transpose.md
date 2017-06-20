@@ -14,9 +14,8 @@ permutations are dimension pairs that need to swap.
 
 **Scala example:**
 ```scala
-val input = Tensor(2, 3).rand()
-val layer = Transpose(Array((1, 2)))
-var output = layer.forward(input)
+> val input = Tensor(2, 3).rand()
+> val layer = Transpose(Array((1, 2)))
 
 > input
 0.6653826	0.25350887	0.33434764	
@@ -33,8 +32,8 @@ var output = layer.forward(input)
 
 **Python example:**
 ```python
-layer = Transpose([(1,2)])
-input = np.array([[0.6653826, 0.25350887, 0.33434764], [0.9618287, 0.5484164, 0.64844745]])
+> layer = Transpose([(1,2)])
+> input = np.array([[0.6653826, 0.25350887, 0.33434764], [0.9618287, 0.5484164, 0.64844745]])
 
 > layer.forward(input)
 [array([[ 0.66538262,  0.96182871],
