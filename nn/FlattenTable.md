@@ -2,18 +2,59 @@
 
 **Scala:**
 ```scala
-Scala code, how to new an instance
+val module = FlattenTable()
 ```
 **Python:**
 ```python
-Python cod, how to new an instance
+module = FlattenTable()
 ```
 
-Description
+FlattenTable takes an arbitrarily deep table of Tensors (potentially nested) as input and a table of Tensors without any nested table will be produced
 
 **Scala example:**
 ```scala
-Scala code
+val module = FlattenTable()
+val t1 = Tensor(3).randn()
+val t2 = Tensor(3).randn()
+val t3 = Tensor(3).randn()
+val input = T(t1, T(t2, T(t3)))
+
+> print input
+ {
+	2:  {
+	   	2:  {
+	   	   	1: -0.7738335778343488
+	   	   	   1.0884042854505709
+	   	   	   -1.0361592723999347
+	   	   	   [com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 3]
+	   	    }
+	   	1: -5.671122490419898E-4
+	   	   -0.0464522284021047
+	   	   0.391028022141935
+	   	   [com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 3]
+	    }
+	1: 0.3199535448955691
+	   1.4756887991498508
+	   -1.0647405816201285
+	   [com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 3]
+ }
+
+> module.forward(input)
+{
+	2: -5.671122490419898E-4
+	   -0.0464522284021047
+	   0.391028022141935
+	   [com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 3]
+	1: 0.3199535448955691
+	   1.4756887991498508
+	   -1.0647405816201285
+	   [com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 3]
+	3: -0.7738335778343488
+	   1.0884042854505709
+	   -1.0361592723999347
+	   [com.intel.analytics.bigdl.tensor.DenseTensor$mcD$sp of size 3]
+ }
+
 ```
 
 **Python example:**
