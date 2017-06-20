@@ -13,9 +13,9 @@ MultiCriterion is a weighted sum of other criterions each applied to the same in
 
 **Scala example:**
 ```scala
-val module = new MultiCriterion()
-val nll = new ClassNLLCriterion()
-val mse = new MSECriterion()
+val module = MultiCriterion()
+val nll = ClassNLLCriterion()
+val mse = MSECriterion()
 module.add(nll, 0.5)
 module.add(mse)
 
@@ -41,5 +41,17 @@ res0: Double = 3.609954360965033
 
 **Python example:**
 ```python
-Python Code
+module = MultiCriterion()
+nll = ClassNLLCriterion()
+mse = MSECriterion()
+module.add(nll, 0.5)
+module.add(mse)
+
+val input = Tensor(5).randn()
+val target = Tensor(5)
+target(Array(1)) = 1
+target(Array(2)) = 2
+target(Array(3)) = 3
+target(Array(4)) = 2
+target(Array(5)) = 1
 ```
