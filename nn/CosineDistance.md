@@ -18,7 +18,7 @@ val input1 = Tensor(3).randn()
 val input2 = Tensor(3).randn()
 val input = T(input1, input2)
 
-> input
+> println(input)
 {
 	2: -1.178431998847704
 	   -0.835195590415135
