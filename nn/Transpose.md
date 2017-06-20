@@ -18,12 +18,12 @@ val input = Tensor(2, 3).rand()
 val layer = Transpose(Array((1, 2)))
 var output = layer.forward(input)
 
-> print(input)
+> input
 0.6653826	0.25350887	0.33434764	
 0.9618287	0.5484164	0.64844745	
 [com.intel.analytics.bigdl.tensor.DenseTensor$mcF$sp of size 2x3]
 
-> print(layer.forward(input))
+> layer.forward(input)
 0.6653826	0.9618287	
 0.25350887	0.5484164	
 0.33434764	0.64844745	
