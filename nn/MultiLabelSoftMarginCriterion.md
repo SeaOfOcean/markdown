@@ -2,11 +2,11 @@
 
 **Scala:**
 ```scala
-val module
+val module = MultiLabelSoftMarginCriterion()
 ```
 **Python:**
 ```python
-Python cod, how to new an instance
+module = MultiLabelSoftMarginCriterion()
 ```
 
 MultiLabelSoftMarginCriterion is a multiLabel multiclass criterion based on sigmoid:
