@@ -59,5 +59,21 @@ val input = T(t1, T(t2, T(t3)))
 
 **Python example:**
 ```python
-Python Code
+module = Sequential()
+# this will create a nested table
+nested = ConcatTable().add(Identity()).add(Identity())
+module.add(nested).add(FlattenTable())
+t1 = np.random.randn(3)
+t2 = np.random.randn(3)
+input = [t1, t2]
+
+> print input
+[array([-2.21080689, -0.48928043, -0.26122161]), array([-0.8499716 ,  1.63694575, -0.31109292])]
+
+> module.forward(input)
+[array([-2.21080685, -0.48928043, -0.26122162], dtype=float32),
+ array([-0.84997159,  1.63694572, -0.31109291], dtype=float32),
+ array([-2.21080685, -0.48928043, -0.26122162], dtype=float32),
+ array([-0.84997159,  1.63694572, -0.31109291], dtype=float32)]
+
 ```
