@@ -45,5 +45,20 @@ input(2) = input2
 
 **Python example:**
 ```python
-Python Code
+module = Pack(2)
+input1 = np.random.randn(2, 2)
+input2 = np.random.randn(2, 2)
+input = [input1, input2]
+
+> print input
+[array([[ 0.92741416, -3.29826586],
+       [-0.03147819, -0.10049306]]), array([[-0.27146461, -0.25729802],
+       [ 0.1316149 ,  1.27620145]])]
+       
+> module.forward(input)
+array([[[ 0.92741418, -3.29826593],
+        [-0.27146462, -0.25729802]],
+
+       [[-0.03147819, -0.10049306],
+        [ 0.13161489,  1.27620149]]], dtype=float32)
 ```
